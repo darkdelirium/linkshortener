@@ -1,0 +1,6 @@
+{
+  "port": "7000",
+  "mongoUri": "mongodb+srv://shorterer:1234321@cluster0-tsqah.mongodb.net/app?retryWrites=true&w=majority",
+  "salt": "mySecretString",
+  "jwtSecret": "super secret string"
+}
