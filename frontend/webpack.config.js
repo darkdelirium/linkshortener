@@ -35,7 +35,8 @@ const config = {
       // CSS Files
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader?modules"
+        //loader: "style-loader!css-loader?modules"
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
