@@ -3,7 +3,7 @@ import { useHttp } from "../hooks/httphook";
 import { useMessage } from "../hooks/messageHook";
 import { AuthContext } from "../context/authContext.js";
 
-const apiUri = "http://localhost:5000";
+const apiUri = "http://192.168.0.33:5000";
 
 export const AuthPage = () => {
   const auth = useContext(AuthContext);
