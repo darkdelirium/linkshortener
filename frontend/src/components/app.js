@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { useRoutes } from "../routes";
 import { useAuth } from "../hooks/authHook";
 import { AuthContext } from "../context/authContext";
+import { Navbar } from "./navbar.jsx";
 
 import "materialize-css";
 
@@ -17,6 +18,7 @@ const App = () => {
         value={{ token, login, logout, userId, isAuthenticated }}
       >
         <BrowserRouter>
+          {isAuthenticated && <Navbar />}
           <div className="container">{routes}</div>
         </BrowserRouter>
       </AuthContext.Provider>
