@@ -4,7 +4,6 @@ import { useHttp } from "../hooks/httphook";
 import { AuthContext } from "../context/authContext";
 import { Loader } from "./Loader.jsx";
 import { LinkCard } from "./LinkCard.jsx";
-const apiUri = "http://192.168.0.33:5000";
 
 export const DetailPage = () => {
   const { token } = useContext(AuthContext);
@@ -14,14 +13,9 @@ export const DetailPage = () => {
 
   const getLink = useCallback(async () => {
     try {
-      const fetched = await request(
-        apiUri + `/api/link/${linkId}`,
-        "GET",
-        null,
-        {
-          Authorization: `Bearer ${token}`
-        }
-      );
+      const fetched = await request(`/api/link/${linkId}`, "GET", null, {
+        Authorization: `Bearer ${token}`
+      });
       setLink(fetched);
       console.log(`detail page ${fetched}`);
     } catch (e) {

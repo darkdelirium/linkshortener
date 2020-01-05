@@ -15,15 +15,19 @@ const config = {
   // Output
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/"
   },
-  /* devServer: {
-    proxy: {
+  devServer: {
+    /*  proxy: {
       "/api": {
         target: "http://192.168.0.33:5000"
       }
-    }
-  }, */
+    }, */
+    historyApiFallback: true,
+    contentBase: "./",
+    hot: true
+  },
   // Loaders
   module: {
     rules: [

@@ -3,6 +3,7 @@ import { NavLink, Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 export const Navbar = () => {
   const auth = useContext(AuthContext);
+  const history = useHistory();
 
   const logoutHandler = event => {
     event.preventDefault();

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { useHttp } from "../hooks/httphook.js";
 import { AuthContext } from "../context/authContext.js";
-const apiUri = "http://192.168.0.33:5000";
+
 export const CreatePage = () => {
   const { request } = useHttp();
   const history = useHistory();
@@ -14,7 +14,7 @@ export const CreatePage = () => {
       try {
         console.log("Try to call backend..,");
         const data = await request(
-          apiUri + "/api/link/generate",
+          "/api/link/generate",
           "POST",
           {
             from: url

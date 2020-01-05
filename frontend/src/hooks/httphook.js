@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+const apiUri = "http://192.168.0.33:5000";
 
 export const useHttp = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,7 @@ export const useHttp = () => {
           headers["Content-Type"] = "application/json";
         }
 
-        const response = await fetch(url, { method, body, headers });
+        const response = await fetch(apiUri + url, { method, body, headers });
         const data = await response.json();
 
         if (!response.ok) {

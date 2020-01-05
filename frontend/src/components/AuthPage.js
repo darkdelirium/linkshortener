@@ -3,8 +3,6 @@ import { useHttp } from "../hooks/httphook";
 import { useMessage } from "../hooks/messageHook";
 import { AuthContext } from "../context/authContext.js";
 
-const apiUri = "http://192.168.0.33:5000";
-
 export const AuthPage = () => {
   const auth = useContext(AuthContext);
   const message = useMessage();
@@ -29,8 +27,7 @@ export const AuthPage = () => {
 
   const registerHandler = async () => {
     try {
-      console.log(apiUri + "/api/auth/register");
-      const data = await request(apiUri + "/api/auth/register", "POST", {
+      const data = await request("/api/auth/register", "POST", {
         ...form
       });
       message(data.message);
@@ -39,7 +36,7 @@ export const AuthPage = () => {
 
   const loginHandler = async () => {
     try {
-      const data = await request(apiUri + "/api/auth/login", "POST", {
+      const data = await request("/api/auth/login", "POST", {
         ...form
       });
       console.log("data", data);
