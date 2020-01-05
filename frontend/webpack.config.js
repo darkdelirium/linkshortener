@@ -17,13 +17,13 @@ const config = {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
   },
-    devServer: {
+  /* devServer: {
     proxy: {
-	"/api": {
-	    "target":"http://localhost:7000"
-	    }
-	}
-    },
+      "/api": {
+        target: "http://192.168.0.33:5000"
+      }
+    }
+  }, */
   // Loaders
   module: {
     rules: [
@@ -78,8 +78,7 @@ const config = {
     ]
   },
   // Plugins
-    plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })]
-
+  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })]
 };
 
 // Exports
