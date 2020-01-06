@@ -19,7 +19,7 @@ export const useAuth = () => {
     setToken(null);
     setUserId(null);
     localStorage.removeItem(storageName);
-  });
+  }, []);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem(storageName));
     if (data && data.token) {
